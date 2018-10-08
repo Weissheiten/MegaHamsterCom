@@ -1,0 +1,17 @@
+{
+    "name": "htl3r/mega-hamster-com",
+    "description": "A home for your furry friends",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Florian Weiss",
+            "email": "github@weissheiten.at"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HTL3R\\MegaHamsterCom\\": "Classes/"
+        }
+    },
+    "require": {}
+}
