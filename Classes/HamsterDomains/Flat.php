@@ -15,7 +15,8 @@ class Flat extends AbstractDomain{
         $this->wallColor = $wallColor;
     }
 
-    public function __toString() : string{
-        return $this->name;
+    public function __toString() : string
+    {
+        return "This Hamster Domain is called: $this->name.<br />The wall color is: $this->wallColor";
     }
 }
