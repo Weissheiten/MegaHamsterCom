@@ -38,6 +38,6 @@ class MenuItem implements \JsonSerializable
     {
         $jsonArray['name'] = $this->name;
         $jsonArray['id'] = $this->id;
-        return json_encode($jsonArray);
+        return $jsonArray;
     }
 }
