@@ -2,26 +2,38 @@
 
 namespace HTL3R\MegaHamsterCom\Menu;
 
-class MenuItem implements \JsonSerializable
+/**
+ * Class MenuItem
+ * @package HTL3R\MegaHamsterCom\Menu single menu item to be contained in a MainMenu
+ */
+class MenuItem
 {
+    /**
+     * @var string name of the menu item shown in the menu when rendered
+     */
     private $name;
 
     /**
-     * @return mixed
+     * @return string name of the menu item shown in the menu when rendered
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * @return mixed
+     * @var int id of the menu item
      */
-    public function getId()
+    private $id;
+
+
+    /***
+     * @return int id of the menu item
+     */
+    public function getId(): int
     {
         return $this->id;
     }
-    private $id;
 
     /***
      * MenuItem constructor.
@@ -32,12 +44,5 @@ class MenuItem implements \JsonSerializable
     {
         $this->name = $name;
         $this->id = $id;
-    }
-
-    public function jsonSerialize()
-    {
-        $jsonArray['name'] = $this->name;
-        $jsonArray['id'] = $this->id;
-        return $jsonArray;
     }
 }

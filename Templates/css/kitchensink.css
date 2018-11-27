@@ -1,0 +1,14 @@
+img.card-img-top{
+    width: 300px;
+}
+
+h5{
+    font-family: Verdana;
+    color: aquamarine;
+}
+
+@media (min-width: 25em){
+    h5{
+        color: red;
+    }
+}

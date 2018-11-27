@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Megahamster Domains</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            let HamsterDomainsJSONObject = requestHamsterHomes();
+        };
+
+        /**
+         * Retrieves the Hamster Domains from the server via fetch
+         */
+        function requestHamsterHomes(){
+            fetch('http://dev.megahamster.local/index.php?format=json')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    console.log(JSON.stringify(myJson));
+                })
+                .catch(function(err){
+                    console.error(err);
+                });
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="domain_list"><ul></ul></div>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
