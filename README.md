@@ -1,19 +1,17 @@
 # MegaHamsterCom
-A demo project for use at the HTL3R
+A demo project about a Hamster accessory store for use at the HTL3R.
 
-Goals for Version 2
---------------------
-[GOAL] Show different pages according to GET parameters
-[GOAL] Output all information about hamster domains either as HTML or as JSON as requested by the user via GET parameter
-[GOAL-Extra1] Implement basic URI rewriting
-[GOAL-Extra2] Follow PSR-7 standards
+##Version history
 
-Version 0.2.1
---------------
-[TASK] Introduce MenuItem functionality
-[TASK] Introduce GET parameters for different pages
-[TASK] Introduce JSON representaiton of menu
+##1.0 Features
+##### Objective Oriented Programming
+Basic OOP classes for hamster homes, including abstract classes and interfaces
 
-Version 0.0.1
---------------
-*) Initial draft with real estates for hamsters
+##### Image Library
+A static class for retrieving a relative image path for hamster homes, including a fallback image if the given file does not exist. All hamster home files are to be saved inside the "Images"folder, currently there is no configuration available.
+
+##### Datasource
+The datasource for the creation of hamster homes has been decoupled into an own HamsterHomeProvider - this is a preparation for later work with databases
+
+##### Menu Classes
+The main menu for showing different pages is implemented via the MainMenu and MenuItem classes. This allows for easier rendering when using templating engines at a later time.

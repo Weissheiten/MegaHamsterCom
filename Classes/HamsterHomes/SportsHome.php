@@ -2,7 +2,8 @@
 
 namespace HTL3R\MegaHamsterCom\HamsterHomes;
 
-use HTL3R\MegaHamsterCom\Helpers\ImageManipulation;
+use HTL3R\MegaHamsterCom\Helpers\ImageRenderer;
+use HTL3R\MegaHamsterCom\Interfaces\HomeInterface;
 
 /**
  * Class SportsHome
@@ -50,7 +51,7 @@ class SportsHome extends AbstractHome implements HomeInterface
     {
         $rv['name'] = $this->name;
         $rv['description'] = $this->description;
-        $rv['imagelocation'] = ImageManipulation::$relativeimagepath . $this->imagelocation;
+        $rv['imagelocation'] = ImageRenderer::getRelativeImagePath($this->imagelocation);
         $rv['price'] = $this->price;
         $rv['sidelength'] = $this->sidelength;
         $rv['area'] = $this->getArea();

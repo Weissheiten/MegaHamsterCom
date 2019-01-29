@@ -2,8 +2,8 @@
 
 namespace HTL3R\MegaHamsterCom\HamsterHomes;
 
-use HTL3R\MegaHamsterCom\Helpers;
-use HTL3R\MegaHamsterCom\Helpers\ImageManipulation;
+use HTL3R\MegaHamsterCom\Interfaces\HomeInterface;
+use HTL3R\MegaHamsterCom\Helpers\ImageRenderer;
 
 /**
  * Class StandardHome
@@ -42,17 +42,13 @@ class StandardHome extends AbstractHome implements HomeInterface
 
     public function __toString(): string
     {
-        $imagesize = getimagesize("./Images/$this->imagelocation");
-        Helpers\ImageManipulation::merge(
-            $this->imagelocation,
-            "Watermarked\\megahamster.gif",
-            "Watermarked\\" . $this->imagelocation
-        );
+        $imagelocation = ImageRenderer::getImage($this->imagelocation);
+        $imagesize = getimagesize($imagelocation);
 
         $rv = <<<RV
 This Hamster Domain is called: $this->name.<br />
 The wall color is: $this->wallColor<br />
-<img src="./Images/Watermarked/$this->imagelocation" style="height:200px" alt="$this->name" />
+<img src="$imagelocation" style="height:200px" alt="$this->name" />
 RV;
 
         return $rv;
@@ -65,7 +61,7 @@ RV;
     {
         $rv['name'] = $this->name;
         $rv['description'] = $this->description;
-        $rv['imagelocation'] = ImageManipulation::$relativeimagepath . $this->imagelocation;
+        $rv['imagelocation'] = ImageRenderer::getImage($this->imagelocation);
         $rv['price'] = $this->price;
         $rv['width'] = $this->width;
         $rv['length'] = $this->length;

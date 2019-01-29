@@ -3,13 +3,10 @@
 namespace HTL3R\MegaHamsterCom;
 
 use HTL3R\MegaHamsterCom\Datasource as DataSource;
-use HTL3R\MegaHamsterCom\Helpers\ImageManipulation;
+use HTL3R\MegaHamsterCom\Helpers\ImageRenderer;
 use HTL3R\MegaHamsterCom\Helpers\HashtagTemplater;
 
 require('vendor/autoload.php');
-
-// When doing file operations on windows
-ImageManipulation::$imagesdir = __DIR__ . "\\Images\\";
 
 $myMenu = DataSource\MenuProvider::loadMenuItems();
 $HamsterHomes = DataSource\HamsterHomeProvider::loadHamsterHomes();

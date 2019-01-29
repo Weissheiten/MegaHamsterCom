@@ -13,7 +13,6 @@ namespace HTL3R\MegaHamsterCom\Helpers;
  */
 class HashtagTemplater
 {
-
     /**
      * @var string template for a single HamsterHome
      */
@@ -31,17 +30,16 @@ HDomain;
      * @param \HTL3R\MegaHamsterCom\HamsterHomes\HomeInterface $domain
      * @return string
      */
-    public static function renderHamsterDomain(\HTL3R\MegaHamsterCom\HamsterHomes\HomeInterface $domain): string
+    public static function renderHamsterDomain(\HTL3R\MegaHamsterCom\Interfaces\HomeInterface $domain): string
     {
         $rv = HashtagTemplater::$HamsterHomeTemplate;
         $rv = str_replace("###name###", $domain->getName(), $rv);
         $rv = str_replace("###description###", $domain->getDescription(), $rv);
         $rv = str_replace("###area###", $domain->getArea(), $rv);
         $rv = str_replace("###price###", $domain->getPrice(), $rv);
-        $rv = str_replace("###imagelocation###", $domain->getImagelocation(), $rv);
+        $rv = str_replace("###imagelocation###", ImageRenderer::getRelativeImagePath($domain->getImagelocation()), $rv);
         return $rv;
     }
-
 
     /**
      * @var string template for the base document

@@ -1,6 +1,6 @@
 <?php
 
-namespace HTL3R\MegaHamsterCom\HamsterHomes;
+namespace HTL3R\MegaHamsterCom\Interfaces;
 
 /***
  * Interface HomeInterface
